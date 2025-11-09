@@ -23,16 +23,6 @@ export default function App() {
     saveSignals(all);
   }, [all]);
 
-  const filtered = useMemo(() => {
-    let data = all;
-    if (org !== 'All') data = data.filter((s) => s.org === org);
-    if (since)
-      data = data.filter((s) =>
-        dayjs(s.publishedAt).isAfter(dayjs(since))
-      );
-    return data;
-  }, [all, org, since]);
-
   async function onExportMD() {
     const md = briefMarkdown(all, since);
     await navigator.clipboard.writeText(md);
