@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useState } from 'react';
 import dayjs from 'dayjs';
 import SignalFeed from './components/SignalFeed';
 import MilestoneTable from './components/MilestoneTable';
